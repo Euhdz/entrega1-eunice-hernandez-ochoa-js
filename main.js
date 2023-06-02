@@ -14,7 +14,6 @@
    Hora extra de evento con coffee break. El número de horas extra podrá ser entre 1 y 4.
 */
 
-//const espacio = " ";
 
 //Preguntar cómo puedo incorporar un "do while" o "for" para que pregunte el nombre y el email 3 veces en caso que no escriban su nombre??
 
@@ -51,6 +50,20 @@ let paqueteEspecial = prompt("Ingresa el número del paquete de tu interés");
 
 let numPersonas = 0;
 
+//Estos son los precios por persona de los paquetes
+let paqCofBrPx = parseInt(180);
+let paqDesEmpPx = parseInt(320);
+let paqDesBufPx = parseInt(390);
+let paqComEmpPx = parseInt(465);
+let paqComBufPx = parseInt(530);
+let paqComBolPx = parseInt(300);
+
+//Estos son los precios por persona de los paquetes
+let adicPantallaPx = parseInt(3500);
+let adicLoungePx = parseInt(900);
+let adicCofBrHrXPx = parseInt(70);
+
+
 while (paqueteEspecial != "ESC") {
     switch (paqueteEspecial) {
         case "1":
@@ -71,7 +84,7 @@ while (paqueteEspecial != "ESC") {
     }
     //Checar cómo hago para que no le pregunte el número de personas cuando entre el default o si esto lo meto dentro de las llaves anteriores o
     //si pongo un "for" "continue" cuando contestan el default y cómo hacerlo
-    numPersonas = prompt("Ingresa el número de personas de tu evento (mínimo 10 y máximo 200 personas");
+    numPersonas =  parseInt(prompt("Ingresa el número de personas de tu evento (mínimo 10 y máximo 200 personas"));
     break;
 }
 
