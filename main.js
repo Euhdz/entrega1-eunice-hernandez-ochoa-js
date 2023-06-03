@@ -37,7 +37,7 @@ if (emailInteresado == "" || emailInteresado == "." || emailInteresado == " ") {
     emailInteresado = prompt("Ingresa tu correo electrónico");
 }
 else {
-    alert("Gracias " + nombreInteresado + "." + " " + "Revisa nuestros paquetes especiales");
+    //   alert("Gracias " + nombreInteresado + "." + " " + "Revisa nuestros paquetes especiales");
 }
 
 console.log(nombreInteresado);
@@ -46,68 +46,85 @@ console.log(emailInteresado);
 
 // En el HTML tendría la descripción de cada uno de los paquetes y para este ejercicio les asigno un número a cada uno de ellos para que los seleccionen
 
-let paqueteEspecial = prompt("Ingresa el número del paquete de tu interés");
-
 let numPersonas = 0;
 
-//Estos son los precios por persona de los paquetes
-let paqCofBrPx = parseInt(180);
-let paqDesEmpPx = parseInt(320);
-let paqDesBufPx = parseInt(390);
-let paqComEmpPx = parseInt(465);
-let paqComBufPx = parseInt(530);
-let paqComBolPx = parseInt(300);
+numPersonas = parseInt(prompt(nombreInteresado + ", por favor ingresa el número de personas de tu evento (mínimo 10 y máximo 200 personas"));
+
 
 //Estos son los precios por persona de los paquetes
-let adicPantallaPx = parseInt(3500);
-let adicLoungePx = parseInt(900);
-let adicCofBrHrXPx = parseInt(70);
+const paqCofBrPx = parseInt(180);
+const paqDesEmpPx = parseInt(320);
+const paqComEmpPx = parseInt(465);
+const paqDesComPx = parseInt(605);
 
+const iva = parseFloat(0.16);
 
-while (paqueteEspecial != "ESC") {
+let precioPaquete = 0;
+
+let subtotalpaquete = numPersonas * precioPaquete;
+
+let paqueteEspecial = prompt("Ingresa el número del paquete de tu interés: \n 1 - Paquete JSU Básico Plus \n 2 - Paquete JSU Básico Plus con Desayuno \n 3 - Paquete JSU Básico Plus con Comida \n 4 - Paquete JSU Básico Plus con Desayuno y Comida");
+
+if (paqueteEspecial != "ESC") {
     switch (paqueteEspecial) {
         case "1":
             alert("Seleccionaste el paquete #1 JSU Básico Plus");
+            precioPaquete = paqCofBrPx;
             break;
         case "2":
             alert("Seleccionaste el paquete #2 JSU Básico Plus con Desayuno");
+            precioPaquete = paqDesEmpPx;
             break;
         case "3":
             alert("Seleccionaste el paquete #3 JSU Básico Plus con Comida");
+            precioPaquete = paqComEmpPx;
             break;
         case "4":
-            alert("Seleccionaste el paquete #4 JSU Básico Plus con Desayuno y Comida");
+            alert("Seleccionaste el paquete #3 JSU Básico Plus con Comida");
+            precioPaquete = paqDesComPx;
             break;
         default:
-            alert("No seleccionaste ninguno de nuestros paquetes. Si deseas más información o tienes alguna pregunta o comentario llena nuestro solicitud de cotización")
+            alert("No seleccionaste ninguno de nuestros paquetes. Si deseas más información o tienes alguna pregunta o comentario llena nuestro solicitud de cotización");
             break;
     }
-    //Checar cómo hago para que no le pregunte el número de personas cuando entre el default o si esto lo meto dentro de las llaves anteriores o
-    //si pongo un "for" "continue" cuando contestan el default y cómo hacerlo
-    numPersonas =  parseInt(prompt("Ingresa el número de personas de tu evento (mínimo 10 y máximo 200 personas"));
-    break;
+
 }
 
+subtotalpaquete = precioPaquete * numPersonas;
 
-let adicionales = prompt("¿Quieres contratar algún servicio adicional para tu paquete? Elige de las siguientes opciones");
+console.log(subtotalpaquete);
 
-while (adicionales != "ESC" || "No") {
-    switch (adicionales) {
-        case "1":
-            alert('Seleccionaste el servicio adicional de Pantalla de 150" y proyector');
-            break;
-        case "2":
-            alert("¿Cuántas salas lounge quieres adicionar?");
-            // Aquí incluiré código para seleccionar entre 1 y 3 salas
-            break;
-        case "3":
-            alert("¿Cuántas horas extra de evento con coffee break requieres?");
-            // Aquí incluiré código para seleccionar entre 1 y 3 salas
-        default:
-            alert("No seleccionaste ninguno de nuestros servicios adicionales. Si deseas más información o tienes alguna pregunta o comentario llena nuestro solicitud de cotización")
-            break;
-    }
-alert("En breve tendrás tu cotización")
-    break;
-}
+calcularIVA = subtotalpaquete * iva;
 
+console.log(calcularIVA);
+
+totalpaquete = subtotalpaquete + calcularIVA;
+
+console.log(totalpaquete);
+
+alert(nombreInteresado + ", el costo del paquete que seleccionaste para " + numPersonas + " es el siguiente: \n Subtotal = $ " + subtotalpaquete + "\n IVA = $ " + calcularIVA + "\n Total = $ " + totalpaquete);
+
+
+
+
+// let adicionales = prompt("¿Quieres contratar algún servicio adicional para tu paquete? Elige de las siguientes opciones");
+
+// while (adicionales != "ESC" || "No") {
+//     switch (adicionales) {
+//         case "1":
+//             alert('Seleccionaste el servicio adicional de Pantalla de 150" y proyector');
+//             break;
+//         case "2":
+//             alert("¿Cuántas salas lounge quieres adicionar?");
+//             // Aquí incluiré código para seleccionar entre 1 y 3 salas
+//             break;
+//         case "3":
+//             alert("¿Cuántas horas extra de evento con coffee break requieres?");
+//         // Aquí incluiré código para seleccionar entre 1 y 3 salas
+//         default:
+//             alert("No seleccionaste ninguno de nuestros servicios adicionales. Si deseas más información o tienes alguna pregunta o comentario llena nuestro solicitud de cotización")
+//             break;
+//     }
+//     alert("En breve tendrás tu cotización")
+//     break;
+// }
