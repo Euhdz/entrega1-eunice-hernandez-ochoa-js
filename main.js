@@ -80,7 +80,7 @@ if (paqueteEspecial != "ESC") {
             precioPaquete = paqComEmpPx;
             break;
         case "4":
-            alert("Seleccionaste el paquete #3 JSU Básico Plus con Comida");
+            alert("Seleccionaste el paquete #4 JSU Básico Plus con Desayuno y Comida");
             precioPaquete = paqDesComPx;
             break;
         default:
@@ -89,6 +89,8 @@ if (paqueteEspecial != "ESC") {
     }
 
 }
+
+if (((paqueteEspecial == "1") || (paqueteEspecial == "2") || (paqueteEspecial == "3") || (paqueteEspecial == "4")) && ((numPersonas>=10 && numPersonas<=200))) {
 
 subtotalpaquete = precioPaquete * numPersonas;
 
@@ -104,27 +106,7 @@ console.log(totalpaquete);
 
 alert(nombreInteresado + ", el costo del paquete que seleccionaste para " + numPersonas + " es el siguiente: \n Subtotal = $ " + subtotalpaquete + "\n IVA = $ " + calcularIVA + "\n Total = $ " + totalpaquete);
 
+}else{
+  alert("No ingresaste los datos necesarios para darte una cotización.")
+}
 
-
-
-// let adicionales = prompt("¿Quieres contratar algún servicio adicional para tu paquete? Elige de las siguientes opciones");
-
-// while (adicionales != "ESC" || "No") {
-//     switch (adicionales) {
-//         case "1":
-//             alert('Seleccionaste el servicio adicional de Pantalla de 150" y proyector');
-//             break;
-//         case "2":
-//             alert("¿Cuántas salas lounge quieres adicionar?");
-//             // Aquí incluiré código para seleccionar entre 1 y 3 salas
-//             break;
-//         case "3":
-//             alert("¿Cuántas horas extra de evento con coffee break requieres?");
-//         // Aquí incluiré código para seleccionar entre 1 y 3 salas
-//         default:
-//             alert("No seleccionaste ninguno de nuestros servicios adicionales. Si deseas más información o tienes alguna pregunta o comentario llena nuestro solicitud de cotización")
-//             break;
-//     }
-//     alert("En breve tendrás tu cotización")
-//     break;
-// }
