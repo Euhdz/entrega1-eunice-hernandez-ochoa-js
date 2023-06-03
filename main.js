@@ -1,21 +1,20 @@
 /* Curso de JavaScript en Coderhouse
  Mi proyecto final consistirá en una sección de cotización para el sitio web que hice en el curso de Desarrollo Web de Coderhouse: Workit-out Business Catering
-  Workit-out Business Catering ofrecerá a empresas servicios de banquetes y paquetes que incluyen el lugar y/o mobiliario para eventos empresariales.
+  Workit-out Business Catering ofrecerá a empresas servicios de banquetes y paquetes que incluyen el lugar y/o mobiliario para eventos empresariales. Este sitio se encuentra en: https://workitout-business-catering.netlify.app/
  En ese sitio agregaré una sección en la que incluiré un cotizador de algunos paquetes especiales en Jardín Santa Ursula.
- El cotizador solicitaría al cliente potencial/usuario que ingrese el número de personas (el cual deberá estar entre 10 y 200), la selección del paquete y en su caso servicios adicionales, los cuales tendrán un 10% de descuento al contratar más de 1.
- Los paquetes son los siguientes:
+ El cotizador solicitaría al cliente potencial/usuario que ingrese el número de personas (el cual deberá estar entre 10 y 200), la selección del paquete y en su caso servicios adicionales, los cuales tendrán un 10% de descuento al contratar más de 1. 
+  Los paquetes son los siguientes:
    Paquete 1. Paquete JSU Básico Plus
-   Paquete 2. Paquete JSU Básico Plus con Desayuno. Aquí deberá seleccionar entre 2 opciones: Desayuno Emplatado o Desayno Buffet.
-   Paquete 3. Paquete JSU Básico Plus con Comida. Aquí deberá seleccionar entre 3 opciones: Comida Emplatada o Comida Buffet o Bolsa Lunch.
-   Paquete 4. Paquete JSU Básico Plus con Desayuno y Comida. Aquí debera seleccionar una de las 2 opciones de desayuno y 1 de las 3 opciones de comida.
- Los servicios adicionales a elegir son los siguientes:
+   Paquete 2. Paquete JSU Básico Plus con Desayuno. Aquí deberá seleccionar entre 2 opciones: Desayuno Emplatado o Desayuno Buffet.  (Las sub-opciones las iré agregando conforme aprenda más de JavaScript)
+   Paquete 3. Paquete JSU Básico Plus con Comida. Aquí deberá seleccionar entre 3 opciones: Comida Emplatada o Comida Buffet o Bolsa Lunch. (Las sub-opciones las iré agregando conforme aprenda más de JavaScript)
+   Paquete 4. Paquete JSU Básico Plus con Desayuno y Comida. Aquí debera seleccionar una de las 2 opciones de desayuno y 1 de las 3 opciones de comida. (Las sub-opciones las iré agregando conforme aprenda más de JavaScript)
+ Los servicios adicionales a elegir son los siguientes (Estolo iré agregando conforme aprenda más de JavaScript):
    Pantalla de 150" y proyector
    Sala lounge. El número de salas lounge podrá ser entre 1 y 4
    Hora extra de evento con coffee break. El número de horas extra podrá ser entre 1 y 4.
 */
 
 
-//Preguntar cómo puedo incorporar un "do while" o "for" para que pregunte el nombre y el email 3 veces en caso que no escriban su nombre??
 
 let nombreInteresado = prompt("Por favor, ingresa tu nombre");
 
@@ -25,32 +24,30 @@ if (nombreInteresado == "" || nombreInteresado == "." || nombreInteresado == " "
     nombreInteresado = prompt("Por favor, ingresa tu nombre");
 }
 else {
-    // alert("Hola " + nombreInteresado);
-}
-
-
-let emailInteresado = prompt("Ingresa tu correo electrónico");
-
-if (emailInteresado == "" || emailInteresado == "." || emailInteresado == " ") {
-    alert("No ingresaste tu correo electrónico");
-
-    emailInteresado = prompt("Ingresa tu correo electrónico");
-}
-else {
-    //   alert("Gracias " + nombreInteresado + "." + " " + "Revisa nuestros paquetes especiales");
+  
 }
 
 console.log(nombreInteresado);
 
-console.log(emailInteresado);
+// Por lo pronto no solicitaré el email, pero tal vez lo incorpore después
+// let emailInteresado = prompt("Ingresa tu correo electrónico");
 
-// En el HTML tendría la descripción de cada uno de los paquetes y para este ejercicio les asigno un número a cada uno de ellos para que los seleccionen
+// if (emailInteresado == "" || emailInteresado == "." || emailInteresado == " ") {
+//     alert("No ingresaste tu correo electrónico");
+
+//     emailInteresado = prompt("Ingresa tu correo electrónico");
+// }
+// else {
+ 
+// }
+
+// console.log(emailInteresado);
 
 let numPersonas = 0;
 
 numPersonas = parseInt(prompt(nombreInteresado + ", por favor ingresa el número de personas de tu evento (mínimo 10 y máximo 200 personas"));
 
-
+// En el HTML tendría la descripción de cada uno de los paquetes y para este ejercicio les asigno un número a cada uno de ellos para que los seleccionen
 //Estos son los precios por persona de los paquetes
 const paqCofBrPx = parseInt(180);
 const paqDesEmpPx = parseInt(320);
@@ -104,9 +101,9 @@ totalpaquete = subtotalpaquete + calcularIVA;
 
 console.log(totalpaquete);
 
-alert(nombreInteresado + ", el costo del paquete que seleccionaste para " + numPersonas + " es el siguiente: \n Subtotal = $ " + subtotalpaquete + "\n IVA = $ " + calcularIVA + "\n Total = $ " + totalpaquete);
+alert(nombreInteresado + ", el costo del paquete que seleccionaste para " + numPersonas + " personas es el siguiente: \n Subtotal = $ " + subtotalpaquete + "\n IVA = $ " + calcularIVA + "\n Total = $ " + totalpaquete);
 
 }else{
-  alert("No ingresaste los datos necesarios para darte una cotización.")
+  alert("Lo sentimos, no podemos date una cotización porque el número de personas ingresado no estaba en el rango establecido o no elegiste una opción válida de paquete")
 }
 
