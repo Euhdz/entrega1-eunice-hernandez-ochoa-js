@@ -18,14 +18,16 @@
 
 let nombreInteresado = prompt("Por favor, ingresa tu nombre");
 
+for (i=1; i<=3; i++) {
 if (nombreInteresado == "" || nombreInteresado == "." || nombreInteresado == " ") {
     alert("No ingresaste tu nombre, por favor ingresa tu nombre");
-
-    nombreInteresado = prompt("Por favor, ingresa tu nombre");
-}
+    nombreInteresado = prompt("Por favor ingresa tu nombre");
+  }
 else {
   
 }
+}
+
 
 console.log(nombreInteresado);
 
@@ -45,7 +47,7 @@ console.log(nombreInteresado);
 
 let numPersonas = 0;
 
-numPersonas = parseInt(prompt(nombreInteresado + ", por favor ingresa el número de personas de tu evento (mínimo 10 y máximo 200 personas"));
+numPersonas = parseInt(prompt("Hola, " + nombreInteresado + " por favor ingresa el número de personas de tu evento (mínimo 10 y máximo 200 personas"));
 
 // En el HTML tendría la descripción de cada uno de los paquetes y para este ejercicio les asigno un número a cada uno de ellos para que los seleccionen
 //Estos son los precios por persona de los paquetes
@@ -102,8 +104,9 @@ totalpaquete = subtotalpaquete + calcularIVA;
 console.log(totalpaquete);
 
 alert(nombreInteresado + ", el costo del paquete que seleccionaste para " + numPersonas + " personas es el siguiente: \n Subtotal = $ " + subtotalpaquete + "\n IVA = $ " + calcularIVA + "\n Total = $ " + totalpaquete);
+alert("Si quieres contratar este paquete o requieres más información, llena nuestro formulario de contacto / cotización")
 
 }else{
-  alert("Lo sentimos, no podemos date una cotización porque el número de personas ingresado no estaba en el rango establecido o no elegiste una opción válida de paquete")
+  alert("Lo sentimos, no podemos darte una cotización porque el número de personas ingresado no estaba en el rango establecido o no elegiste una opción válida de paquete.")
 }
 
